@@ -4,7 +4,7 @@ function Footer(){
     return(
         <div className="footer">
             <img src={morilabsLogo} alt="Mori Labs Logo" style={{ height: '2rem' }} className='footer-logo'/>
-            <p> Created by Mori Labs </p>
+            <p className='text-md md:text-xl'> Created by Mori Labs </p>
         </div>
     )
 }
