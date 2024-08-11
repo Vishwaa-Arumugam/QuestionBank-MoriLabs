@@ -8,6 +8,7 @@ import Footer from './Footer.jsx'
 import MeetTheTeam from './MeetTheTeam.jsx';
 import Sempage from './Sempage.jsx';
 import Combined from './SubmitPapers/Combined.jsx';
+import One from './RequestPapers/One.jsx'
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path='/about-us' element={<MeetTheTeam/>}/>
             <Route path='/Qp/:dept' element={<Sempage/>}/>
             <Route path='/contribute' element={<Combined/>}/>
+            <Route path='/submitpapers' element={<One/>}/>
           </Routes>
       <Footer/>
     </Router>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -76,11 +77,11 @@ const Alias = () => {
 
         </Wrapper>
         <Submit>
-            <input type="button" value="Submit My Paper" />
+            <input type="button" value="Submit My Paper"  />
         </Submit>
         <Req>
             <span>
-                Want to request for a Question paper? <a href="">Request Here</a>
+                Want to request for a Question paper? <Link to='/submitpapers'>Request Here </Link>
             </span>
         </Req>
     </>
