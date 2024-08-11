@@ -1,0 +1,24 @@
+.title{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.dept{
+    color: #114AA4;
+}
+.t1{
+    display: flex;
+    justify-content: center;
+}
+.t2{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 10%;
+    align-items: center;
+    width: 80%;
+}
+p{
+    line-height: 2;
+    font-weight: 400;
+}

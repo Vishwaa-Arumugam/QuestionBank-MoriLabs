@@ -1,0 +1,64 @@
+.sem{
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+.titles{
+    display: flex;
+    justify-content: center;
+}
+.semimg{
+    width: 80%;
+    margin-left: 10%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.sem-button{
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.sem-button:hover{
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+}
+
+.sub-button{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.subject{
+    width: 80%;
+    margin-left: 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 100px;
+    gap: 30px;
+}
+
+.sub-button:hover{
+    background-color: black;
+    color: white;
+}
+
+.sub-div{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.exams{
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    justify-content: space-between;
+}
+
+.cat-div{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
