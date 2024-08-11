@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from './Footer.jsx'
 import MeetTheTeam from './MeetTheTeam.jsx';
 import Sempage from './Sempage.jsx';
+import ResultPage from './ResultPage.jsx';
 import Combined from './SubmitPapers/Combined.jsx';
 import One from './RequestPapers/One.jsx'
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/about-us' element={<MeetTheTeam/>}/>
             <Route path='/Qp/:dept' element={<Sempage/>}/>
+            <Route path='/result/:deptName/:selectedSem/:selectedSub/:paperName' element={<ResultPage/>}/>
             <Route path='/contribute' element={<Combined/>}/>
             <Route path='/submitpapers' element={<One/>}/>
           </Routes>

@@ -96,7 +96,6 @@ const Home = () => {
                 <p className='text-base sm:text-lg md:text-xl pt-2'>{key}</p>
               </div>
             ))}
-
           </div>
         </div>
         <div className='flex flex-col items-center justify-center'>
