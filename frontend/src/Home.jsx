@@ -34,23 +34,24 @@ const Home = () => {
     return departments[randomIndex] + ' ' + exams[randomExamIndex];
   };
 
-  const [word, setWord] = useState('');
+  const [word, setWord] = useState(randomWord());
   const [isTypingComplete, setIsTypingComplete] = useState(false);
 
-  
   useEffect(() => {
-    setWord(randomWord());
+    const intervalId = setInterval(() => {
+      setWord(randomWord());
+    }, 4000);
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleDone = () => {
     setIsTypingComplete(true);
   };
 
-  
   const [typeText] = useTypewriter({
     words: [word],
     loop: 0, 
-    typeSpeed: 50,
+    typeSpeed: 70,
     deleteSpeed: 70,
     onDone: handleDone 
   });
