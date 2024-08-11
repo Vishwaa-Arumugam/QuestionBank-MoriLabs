@@ -28,8 +28,9 @@ const Navbar = () => {
                   <p className='text-md md:text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'>
                     Question Papers
                   </p>
-                  <p className='text-md md:text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'>
+                  <p className='text-md md:text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5' onClick={()=> navigate('/contribute')}>
                     Contribute
+                    
                   </p>
                   <p
                     className='text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500'
@@ -62,7 +63,9 @@ const Navbar = () => {
                   <p className='text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'>
                     Question Papers
                   </p>
-                  <p className='text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'>
+                  <p className='text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'
+                  onClick={()=> navigate('/contribute')}
+                  >
                     Contribute
                   </p>
                   <p
