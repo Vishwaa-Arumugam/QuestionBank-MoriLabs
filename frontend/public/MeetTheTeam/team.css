@@ -1,4 +1,3 @@
-
 .heading {
     font-size: 75px;
     margin-bottom: 50px;
@@ -6,16 +5,16 @@
 
 .ima {
     margin-top: 40px;
-    width: 210px; 
-    height: 290px; 
+    width: 250px;
+    height: 290px;
     overflow: hidden;
-    position: relative; 
+    position: relative;
 }
 
 .ima img {
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -25,25 +24,25 @@
 
 .profiles {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 40px; 
-    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
     margin-bottom: 10px;
 }
 
 .profiles1 {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 120px; 
+    flex-wrap: wrap;
+    gap: 120px;
     margin-left: 30px;
     margin-bottom: 10px;
 }
 
 
 button {
-    background-color: transparent; 
+    background-color: transparent;
     border: none;
-    padding: 0; 
+    padding: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -52,7 +51,7 @@ button {
 }
 
 button i {
-    font-size: 40px; 
+    font-size: 40px;
 }
 
 
@@ -61,7 +60,7 @@ button i {
 }
 
 .linkedin-button:hover i {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
 
@@ -82,7 +81,7 @@ button i {
     transform: scale(1.2);
 }
 
-.link{
+.link {
 
     display: flex;
     gap: 25px;
@@ -92,15 +91,15 @@ button i {
 .page-link {
     display: flex;
     flex-wrap: wrap;
-    gap: 90px; 
+    gap: 90px;
     margin-left: 27px;
     margin-bottom: 10px;
 }
 
 .details {
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 10px;
 }
