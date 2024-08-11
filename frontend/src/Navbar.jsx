@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-  const [navbar, setNavbar] = useState(false);
+  const [navbar, setNavbar] = useState(true);
   const navigate = useNavigate();
 
   function handleNavLink() {
@@ -40,7 +40,7 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div className='absolute right-5 top-20 md:hidden' onClick={handleNavLink}>
+            <div className='absolute right-5 top-[70px] md:hidden' onClick={handleNavLink}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer hover:scale-[1.19] duration-500 md:hidden">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
               </svg>
