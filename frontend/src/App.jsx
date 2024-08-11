@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from './Footer.jsx'
 import MeetTheTeam from './MeetTheTeam.jsx';
 import Sempage from './Sempage.jsx';
+import ResultPage from './ResultPage.jsx';
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/about-us' element={<MeetTheTeam/>}/>
             <Route path='/Qp/:dept' element={<Sempage/>}/>
+            <Route path='/result/:deptName/:selectedSem/:selectedSub/:paperName' element={<ResultPage/>}/>
           </Routes>
       <Footer/>
     </Router>

@@ -1,28 +1,23 @@
-// import React from 'react'
-// import './Fetchpaper.css'
-// const Fetchpaper = () => {
-//   const sems = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']
-//   const subjects = [
-//     'Matrices and Calculus',
-//     'Engineering Physics',
-//     'Enginnering Chemistry',
-//     'Enginerring Graphics',
-//     'Technical English',
-//     'Python Programming'
-//   ]
-//   return (
-//     <div className='sem'>
-//         <div className='titles'><p>Choose Your Semester:</p></div>
-//         <div className='semimg'>
-//         {sems.map((sem, index) => (
-//           <button key={ind
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Fetchpaper.css';
+import Button from './Button';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const Fetchpaper = () => {
-  const [selectedSem, setSelectedSem] = useState(null); 
-  const [selectdSub, setSelectedSub] = useState(null);
-  const [selectedExam, setSelctedExam] = useState(null);
+  const [selectedSem, setSelectedSem] = useState(null);
+  const [selectedSub, setSelectedSub] = useState(null);
+  const [selectedExam, setSelectedExam] = useState(null);
+  const [selectedDept, setSelectedDept] = useState(null);
+  const navigate = useNavigate();
+  const {dept} = useParams();
+  console.log(dept);
+
+  
+  useEffect(() => {
+    if (dept) {
+      setSelectedDept(dept);
+    }
+  }, [dept]);
 
   const sems = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
   const subjects = [
@@ -39,24 +34,24 @@ const Fetchpaper = () => {
       <div className='titles'><p>Choose Your Semester:</p></div>
       <div className='semimg'>
         {sems.map((sem, index) => (
-          <button 
-            key={index} 
+          <button
+            key={index}
             className='sem-button'
-            onClick={() => setSelectedSem(sem)} 
+            onClick={() => setSelectedSem(sem)}
           >
             {sem}
           </button>
         ))}
       </div>
 
-      {selectedSem && ( 
+      {selectedSem && (
         <div className='sub-div'>
           <div className='titles'><p>Choose Subject for Semester {selectedSem} :</p></div>
           <div className='subject'>
             {subjects.map((sub, index) => (
-              <button key={index} 
-                      className='sub-button'
-                      onClick={() => setSelectedSub(sub)}>
+              <button key={index}
+                className='sub-button'
+                onClick={() => setSelectedSub(sub)}>
                 {sub}
               </button>
             ))}
@@ -64,28 +59,27 @@ const Fetchpaper = () => {
         </div>
       )}
 
-      {selectdSub && (
-      <div className='cat-div'>
-      <div className='titles'><p>Choose Your Exam :</p></div>
-      <div className='exams'>
-      <button
-      onClick={()=>setSelctedExam('cat1')}><img src='/ranjith/image12.png'></img></button>
-      <button
-      onClick={()=>setSelctedExam('cat2')}><img src='/ranjith/image13.png'></img></button>
-      <button
-      onClick={()=>setSelctedExam('cat3')}><img src='/ranjith/image14.png'></img></button>
-      <button
-      onClick={()=>setSelctedExam('cat4')}><img src='/ranjith/image15.png'></img></button>
-      </div>
-      </div>)}
+      {selectedSub && (
+        <div className='cat-div'>
+          <div className='titles'><p>Choose Your Exam :</p></div>
+          <div className='exams'>
+            <button
+              onClick={() => setSelectedExam('cat1')}><img src='/ranjith/image12.png' alt='CAT 1'></img></button>
+            <button
+              onClick={() => setSelectedExam('cat2')}><img src='/ranjith/image13.png' alt='CAT 2'></img></button>
+            <button
+              onClick={() => setSelectedExam('cat3')}><img src='/ranjith/image14.png' alt='CAT 3'></img></button>
+            <button
+              onClick={() => setSelectedExam('cat4')}><img src='/ranjith/image15.png' alt='CAT 4'></img></button>
+          </div>
+        </div>
+      )}
 
-      {
-        selectedExam && (
-            <div>
-                <button className='fetch-button'>Fetch Papers</button>
-            </div>
-        )
-      }
+      {selectedExam && (
+        <div className='button-div' onClick={() => navigate(`/result/${selectedDept}/${selectedSem}/${selectedSub}/${selectedExam}`)}>
+          <Button name={"Fetch Papers"} />
+        </div>
+      )}
     </div>
   );
 }
