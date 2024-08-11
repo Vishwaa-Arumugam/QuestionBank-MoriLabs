@@ -6,9 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Footer from './Footer.jsx'
 import MeetTheTeam from './MeetTheTeam.jsx';
-<<<<<<< Updated upstream
 import Sempage from './Sempage.jsx';
-=======
 import Heading from './SubmitPapers/Header.jsx';
 import SubjectDetails from './SubmitPapers/SubjectDetails.jsx';
 import MoreDetails from './SubmitPapers/MoreDetails.jsx';
@@ -16,7 +14,6 @@ import FileUpload from './SubmitPapers/Upload.jsx';
 import AcknowledgementCheckbox from './SubmitPapers/AcknowledgementCheckBox.jsx';
 import Alias from './SubmitPapers/Alias.jsx';
 import Head from './SubmitPapers/Head.jsx';
->>>>>>> Stashed changes
 function App() {
 
   return (
