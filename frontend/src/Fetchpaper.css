@@ -20,18 +20,11 @@
     font-weight: bold;
 }
 
-.sem-button:hover{
-    background-color: black;
-    color: white;
-    border-radius: 20px;
-}
 
 .sub-button{
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 80%;
-    height: 35px;
-
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .subject{
@@ -40,14 +33,9 @@
     margin-left: 10%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 100px;
+    row-gap: 200px;
     gap: 30px;
     margin-bottom: 100px;
-}
-
-.sub-button:hover{
-    background-color: black;
-    color: white;
 }
 
 .sub-div{
@@ -70,7 +58,14 @@
     margin-bottom: 70px;
 }
 
-.button-div{
+/* .button-div{
     margin-bottom: 0px;
     margin: auto;
 }
+} */
+
+.selected {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+  }

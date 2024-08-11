@@ -9,6 +9,8 @@ const Home = () => {
 
   const navigate = useNavigate();
 
+  
+
   const imagePath = {
     'IT': '/Home/image 2.png',
     'CSE': '/Home/image 3.png',
@@ -17,7 +19,8 @@ const Home = () => {
     'ECE': '/Home/image 7.png',
     'BME': '/Home/image 8.png',
     'CIVIL': '/Home/image 9.png',
-    'CHEM': '/Home/image 10.png'
+    'CHEM': '/Home/image 10.png',
+
   }
 
   const departments = [
@@ -50,10 +53,10 @@ const Home = () => {
 
   const [typeText] = useTypewriter({
     words: [word],
-    loop: 0, 
+    loop: 0,
     typeSpeed: 70,
     deleteSpeed: 70,
-    onDone: handleDone 
+    onDone: handleDone
   });
 
   return (
