@@ -48,7 +48,7 @@ const Submit = styled.div`
     border-radius:20px;
 
       &:hover {
-    background-color: #067;  // Light gray on hover
+    background-color: #067;  
   }
     }
 `
