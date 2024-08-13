@@ -86,14 +86,14 @@ const QPDetails = () => {
     { value: '2024', label: '2024' },
     { value: '2023', label: '2023' },
     { value: '2022', label: '2022' },
-    // Add more options as needed
+ 
   ];
 
   const semesterOptions = [
     { value: 'First', label: 'First' },
     { value: 'Second', label: 'Second' },
     { value: 'Third', label: 'Third' },
-    // Add more options as needed
+
   ];
 
   const departmentOptions = [
