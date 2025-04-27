@@ -40,11 +40,11 @@ const Team = () => {
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold uppercase tracking-wider text-black mb-2">
+      <div className="max-w-9xl mt-32 mx-auto text-center">
+        <h2 className="text-4xl font-bold uppercase tracking-wider hover:underline cursor-pointer text-black mb-2">
           MEET THE TEAM
         </h2>
-        <p className="text-xl text-black italic mb-12">
+        <p className="text-xl text-[#114AA4] italic mb-12">
           Five Minds, Infinite Possibilities.
         </p>
         
@@ -54,7 +54,7 @@ const Team = () => {
               key={index}
               className="w-64 bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
-              <div className="w-36 h-36 mx-auto mb-6 rounded-full border-4 border-blue-500 overflow-hidden">
+              <div className="w-36 h-36 mx-auto mb-6 rounded-full border-4 border-[#114AA4] overflow-hidden">
                 <img 
                   src={member.imageLink} 
                   alt={member.name}

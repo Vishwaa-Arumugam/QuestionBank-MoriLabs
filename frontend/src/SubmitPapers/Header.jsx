@@ -7,6 +7,7 @@ const QPDetails = () => {
   const [department, setDepartment] = useState(null);
 
   const yearOptions = [
+    { value: '2025', label: '2025' },
     { value: '2024', label: '2024' },
     { value: '2023', label: '2023' },
     { value: '2022', label: '2022' },
@@ -16,6 +17,11 @@ const QPDetails = () => {
     { value: 'First', label: 'First' },
     { value: 'Second', label: 'Second' },
     { value: 'Third', label: 'Third' },
+    { value: 'Fourth', label: 'Fourth' },
+    { value: 'Fifth', label: 'Fifth' },
+    { value: 'Sixth', label: 'Sixth' },
+    { value: 'Seventh', label: 'Seventh' },
+    { value: 'Eighth', label: 'Eighth'}
   ];
 
   const departmentOptions = [

@@ -14,13 +14,13 @@ const Navbar = () => {
   const [bgColor, setBgColor] = useState("bg-white");
   const navigate = useNavigate();
 
-  const navLinks = ['QuestionPapers', 'Contribute', 'AboutUs'];
-  const sectionIds = ['/question-papers', '/contribute', '/about-us']; // Adjusted to URLs
+  const navLinks = ['QuestionPapers', 'Contribute', 'RequestQP', 'AboutUs'];
+  const sectionIds = ['/question-papers', '/contribute', '/requestpapers' ,'/about-us']; 
 
   const handleHamburger = () => setHamburger(prev => !prev);
 
   const handleRedirect = (id) => {
-    navigate(id); // Use the navigate function to redirect
+    navigate(id); 
   };
 
   return (
