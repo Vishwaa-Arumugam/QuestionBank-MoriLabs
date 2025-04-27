@@ -9,7 +9,7 @@ const Home = () => {
 
   const navigate = useNavigate();
 
-  
+
 
   const imagePath = {
     'IT': '/Home/image 2.png',
@@ -63,21 +63,22 @@ const Home = () => {
     <>
       <div className='w-[80%] mx-auto mt-7 md:mt-10'>
         <div className='flex flex-wrap justify-around items-center p-10 md:p-10'>
-          <div className='flex-grow text-4xl text-center items-center md:text-left md:text-5xl font-semibold z-10 mb-4 md:mb-0'>
+          <div className='flex-grow text-2xl text-center items-center md:ml-36 md:text-left md:text-5xl font-semibold z-10 mb-4 md:mb-0'>
             <span className='text-[#114AA4]'>{typeText}<Cursor cursorStyle='|' /></span>Papers
           </div>
-          <div className='flex-shrink-0'>
+          <div className='flex items-center justify-center'>
             <img
-              className='object-contain aspect-square hover:scale-[1.09] duration-500 cursor-pointer max-w-screen-sm'
+              className='object-contain hover:scale-[1.09] duration-500 cursor-pointer w-full max-w-full sm:block'
               src="/Home/8899732.png"
               alt=""
             />
           </div>
+
         </div>
 
         <div className='w-[85%] mx-auto'>
-          <p className='mb-16 text-justify md:text-center text-lg md:text-xl leading-10'>
-            Welcome to SSN Question Bank—where we've collected all the past exam papers from SSN College of Engineering, Chennai, so you can pretend you studied. No need to thank us. Just grab a coffee, browse through our user-friendly platform, and voilà! Whether you're cramming at the last minute or just looking for extra practice, SSN Question Bank has got your back. Because let's be real, who doesn't love a shortcut to academic success?
+          <p className='mb-16 text-center text-lg md:text-xl' style={{ 'lineHeight': '39px' }}>
+            Welcome to SSN Question Bank—where we've collected all the past exam papers from SSN College of Engineering, Chennai, so you can pretend you studied. No need to thank us. Just grab a coffee, browse through our user-friendly platform Whether you're cramming at the last minute or just looking for extra practice, SSN Question Bank has got your back. Because let's be real, who doesn't love a shortcut to academic success?
           </p>
         </div>
         <div>
@@ -100,7 +101,9 @@ const Home = () => {
         </div>
         <div className='flex flex-col items-center justify-center'>
           <p className='text-center text-md md:text-xl cursor-pointer hover:underline my-10 hover:scale-[1.09] duration-500'>Department not listed here?</p>
-          <Button name={"Contibute"} />
+          <div onClick={() => navigate('/contribute')}>
+            <Button name={"Contibute"} />
+          </div>
         </div>
       </div>
     </>
