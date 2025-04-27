@@ -23,7 +23,7 @@ const Alias = () => {
       <div className="text-center mt-[-25px] mb-12">
         <span className="text-sm text-gray-700">
           Want to request for a Question paper? 
-          <Link to="/submitpapers" className="text-blue-600 hover:underline">Request Here</Link>
+          <Link to="/requestpapers" className="text-blue-600 hover:underline">Request Here</Link>
         </span>
       </div>
     </>
