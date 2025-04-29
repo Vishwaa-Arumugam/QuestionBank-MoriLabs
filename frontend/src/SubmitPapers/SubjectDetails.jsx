@@ -1,12 +1,71 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Select from 'react-select';
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: left;
+  border: 1px solid #ccc;
+  border-radius: 35px;
+  padding: 5px 5px;
+  max-width: 550px;
+  height: 55px;
+  margin: 20px auto;
+  background-color: #fff;
+`;
+
+const Section = styled.div`
+  width: 100%;  // Occupies the full width now
+  text-align: left;
+  height: 100%;
+  
+  span {
+    // margin-top: 1px;
+    margin-left:10px;
+    display: block;
+    font-weight: bold;
+    font-size: 13px;
+    color: #555;
+  }
+
+  .custom-select-container {
+    font-size: 14px;
+    color: #000;
+    width: 100%;
+  }
+
+  .custom-select__control {
+    border: none;
+    // margin-left:10px
+    background-color: transparent;
+    box-shadow: none;
+    padding-left: 10px;
+  }
+
+  .custom-select__value-container {
+    padding: 0;
+  }
+
+  .custom-select__indicator-separator {
+    display: none;
+  }
+
+  .custom-select__dropdown-indicator {
+    display: none;
+  }
+
+  .custom-select__menu {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+`;
 
 const SubjectDetails = () => {
   const [subject, setSubject] = useState(null);
 
   const subjectOptions = [
     { value: 'UIT2601', label: 'Web Programming' },
-    { value: 'UIT2602', label: 'Internet Of Things And C Programming' },
+    { value: 'UIT2602 ', label: ' Internet Of Things And C Programming' },
   ];
 
   const handleSelectChange = (selectedOption) => {
@@ -14,18 +73,18 @@ const SubjectDetails = () => {
   };
 
   return (
-    <div className="flex items-start border border-gray-300 rounded-3xl px-4 py-3 max-w-4xl mx-auto bg-white shadow-md mt-10">
-      <div className="w-full text-left">
-        <span className="block text-sm font-semibold text-gray-600 mb-2 ml-2">Subject (Please select closest subject in case it doesn’t exist)</span>
+    <Wrapper>
+      <Section>
+        <span>Subject (Please select closest subject in case it doesn’t exist) </span>
         <Select
           classNamePrefix="custom-select"
-          className="w-full font-medium text-black border-2 border-gray-300 rounded-lg"
+          className="custom-select-container"
           options={subjectOptions}
           value={subjectOptions.find(option => option.value === subject)}
           onChange={handleSelectChange}
         />
-      </div>
-    </div>
+      </Section>
+    </Wrapper>
   );
 };
 

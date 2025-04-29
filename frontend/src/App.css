@@ -19,10 +19,10 @@ body {
   background-color: #000000;
   color: white;
   text-align: right; 
-  /* padding: 1rem; */
+  padding: 1rem;
   position: relative;
   width: 100%;
-  height: 2%;
+  height: 5%;
   display: flex;
   justify-content: flex-end; 
   align-items: center; 
@@ -35,5 +35,4 @@ body {
 
 .footer p {
   margin: 0;
-  padding-right: 10px;
 }
