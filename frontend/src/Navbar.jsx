@@ -1,70 +1,90 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import morilogo from '../src/assets/morilogo.png';
-
-const NavLink = ({ children, onClick, sectionId }) => (
-  <div className='cursor-pointer relative group'>
-    <span onClick={() => onClick(sectionId)}>{children}</span>
-    <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full hover:h-2'></span>
-  </div>
-);
 
 const Navbar = () => {
-  const [hamburger, setHamburger] = useState(true);
-  const [bgColor, setBgColor] = useState("bg-white");
+  const [navbar, setNavbar] = useState(true);
   const navigate = useNavigate();
 
-  const navLinks = ['QuestionPapers', 'Contribute', 'RequestQP', 'AboutUs'];
-  const sectionIds = ['/question-papers', '/contribute', '/requestpapers' ,'/about-us']; 
-
-  const handleHamburger = () => setHamburger(prev => !prev);
-
-  const handleRedirect = (id) => {
-    navigate(id); 
-  };
+  function handleNavLink() {
+    setNavbar(!navbar);
+  }
 
   return (
     <>
-      <div className={`w-full m-auto ${bgColor} sticky top-0 z-50 py-3 shadow-stone-100 shadow-md`}>
-        <div className='w-[60%] m-auto justify-center font-poppins md:text-lg text-md p-5 sm:flex hidden'>
-          <div className='flex space-x-7 gap-10 justify-center sm:justify-start'>
-            <div className='flex'>
-              <img src={morilogo} className='rounded-md h-6 mr-2' alt="MoriLabs logo" />
-              <span className='cursor-pointer relative group' onClick={() => navigate('/')}>
-                SSNQuestionBank
-                <span className='absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full hover:h-2'></span>
-              </span>
-            </div>
-            {navLinks.map((link, index) => (
-              <NavLink key={link} onClick={handleRedirect} sectionId={sectionIds[index]}>
-                {link}
-              </NavLink>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Hamburger Navbar */}
-      <div className={`block sm:hidden font-poppins sticky text-lg ${hamburger ? '' : 'shadow-md shadow-gray-200'} ${bgColor} sticky top-0 z-50 py-1`}>
-        <div className='p-5 pb-10 text-center space-y-6'>
-          <div className='flex gap-1.5 justify-center relative'>
-            <img src={morilogo} className='rounded-md h-6' alt="MoriLabs logo" />
-            <span className='text-lg cursor-pointer'>SSNQB</span>
-            <div onClick={handleHamburger}>
-              <box-icon name={hamburger ? 'menu' : 'x'} className='right-0 absolute cursor-pointer' size='md' border='square' />
-            </div>
-          </div>
-          {!hamburger && (
-            <section className='space-y-6'>
-              {navLinks.map((link, index) => (
-                <div key={link} onClick={() => handleRedirect(sectionIds[index])}>
-                  {link}
+      {
+        navbar ? (
+          <>
+            <div className='min-w-full mt-16 hidden md:block'>
+              <div className='md:flex md:flex-row md:justify-between flex-col justify-normal text-center px-10 md:text-left'>
+                <div>
+                  <p
+                    className='text-md md:text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'
+                    onClick={() => navigate('/')}
+                  >
+                    SSNQuestionBank
+                  </p>
                 </div>
-              ))}
-            </section>
-          )}
-        </div>
-      </div>
+                <div className='flex md:gap-20 flex-col md:flex-row'>
+                  <p className='text-md md:text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'>
+                    Question Papers
+                  </p>
+                  <p className='text-md md:text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5' onClick={()=> navigate('/contribute')}>
+                    Contribute
+                    
+                  </p>
+                  <p
+                    className='text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500'
+                    onClick={() => navigate('/about-us')}
+                  >
+                    About Us
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='absolute right-5 top-[70px] md:hidden' onClick={handleNavLink}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer hover:scale-[1.19] duration-500 md:hidden">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+              </svg>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className='min-w-full mt-16'>
+              <div className='md:flex md:flex-row md:justify-between flex-col justify-normal text-center px-10 md:text-left'>
+                <div>
+                  <p
+                    className='text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'
+                    onClick={() => navigate('/')}
+                  >
+                    SSNQuestionBank
+                  </p>
+                </div>
+                <div className='flex md:gap-20 flex-col md:flex-row'>
+                  <p className='text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'>
+                    Question Papers
+                  </p>
+                  <p className='text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500 mb-5'
+                  onClick={()=> navigate('/contribute')}
+                  >
+                    Contribute
+                  </p>
+                  <p
+                    className='text-2xl cursor-pointer hover:underline hover:scale-[1.09] duration-500'
+                    onClick={() => navigate('/about-us')}
+                  >
+                    About Us
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className='absolute right-5 top-20' onClick={handleNavLink}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer hover:scale-[1.19] duration-500 md:hidden">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </div>
+          </>
+        )
+      }
     </>
   );
 };

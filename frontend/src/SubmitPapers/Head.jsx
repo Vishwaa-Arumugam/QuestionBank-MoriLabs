@@ -9,7 +9,7 @@ export default function Head(){
     text-align:center;
 
     span{
-    color:#114AA4
+    color:#75232a
     }
     `
     return(

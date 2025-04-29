@@ -1,39 +1,116 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Select from 'react-select';
 
-const QPDetails = () => {
-  const [year, setYear] = useState(null);
-  const [semester, setSemester] = useState(null);
-  const [department, setDepartment] = useState(null);
+const Wrapper = styled.div`
 
-  const yearOptions = [
-    { value: '2024', label: '2024' },
-    { value: '2023', label: '2023' },
-    { value: '2022', label: '2022' },
+  display: flex;
+//   justify-content: space-between;
+  gap:10px;
+  align-items: left;
+  border: 1px solid #ccc;
+  border-radius: 35px;
+  padding: 5px 5px;
+  max-width: 550px;
+  height:55px;
+  margin: 20px auto;
+  background-color: #fff;
+`;
+
+const Section = styled.div`
+  text-align: left;
+  width: 20%;  // Adjusts the width of each dropdown
+  height: 100%;
+
+  &:not(:last-child) {
+    border-right: 2px solid #ccc;
+    padding-right: 5px;
+    margin-right: 5px;
+    height: 100%;
+  }
+
+  span {
+    margin-top: 1px;
+    margin-left:12px;
+    display: block;
+
+    font-weight: bold;
+    font-size: 13px;
+    color: #555;
+  }
+
+  // Adjustments for the Department section
+  &:last-child {
+    text-align: left;
+    width: 50%;  // Increased width for department select menu
+  }
+    
+
+  .custom-select-container {
+    font-size: 14px;
+    color: #000;
+    width: 100%;
+  }
+
+  .custom-select__control {
+    border: none;
+    margin-left:12px;
+
+    background-color: transparent;
+    box-shadow: none;
+    padding-left: 0;
+  }
+
+  .custom-select__value-container {
+    padding: 0;
+  }
+
+  .custom-select__indicator-separator {
+    display: none;
+  }
+
+  .custom-select__dropdown-indicator {
+    display: none;
+  }
+
+  .custom-select__menu {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+`;
+
+const MoreDetails = () => {
+  const [exam, setExam] = useState(null);
+  const [regulation, setRegulation] = useState(null);
+  const [subjectMissing, setMissing] = useState(null);
+
+  const examOptions = [
+    { value: 'CAT-1', label: 'CAT-1' },
+    { value: 'CAT-2', label: 'CAT-2' },
+    { value: 'SEMESTER', label: 'SEMESTER' },
   ];
 
-  const semesterOptions = [
-    { value: 'First', label: 'First' },
-    { value: 'Second', label: 'Second' },
-    { value: 'Third', label: 'Third' },
+  const regulationOptions = [
+    { value: 'R2021', label: 'R2021' },
+    { value: 'R2019', label: 'R2019' },
   ];
 
-  const departmentOptions = [
-    { value: 'Information Technology', label: 'Information Technology' },
-    { value: 'Computer Science', label: 'Computer Science' },
-    { value: 'Electronics and Communication', label: 'Electronics and Communication' },
+  const subjectMissingOptions = [
+    { value: 'Yes', label: 'Yes, my subject is missing' },
+    { value: 'No', label: 'No, This is not a new one' },
+    // Add more options as needed
   ];
 
   const handleSelectChange = (type, selectedOption) => {
     switch (type) {
-      case 'year':
-        setYear(selectedOption ? selectedOption.value : null);
+      case 'exam':
+        setExam(selectedOption ? selectedOption.value : null);
         break;
-      case 'semester':
-        setSemester(selectedOption ? selectedOption.value : null);
+      case 'regulation':
+        setRegulation(selectedOption ? selectedOption.value : null);
         break;
-      case 'department':
-        setDepartment(selectedOption ? selectedOption.value : null);
+      case 'missing':
+        setMissing(selectedOption ? selectedOption.value : null);
         break;
       default:
         break;
@@ -41,41 +118,39 @@ const QPDetails = () => {
   };
 
   return (
-    <div className="flex gap-4 justify-start items-center border border-gray-300 rounded-3xl mt-10 px-6 py-4 max-w-4xl mx-auto bg-white shadow-lg">
-      <div className="text-left w-1/4 h-full pr-4 mr-4 border-r-2 border-gray-300">
-        <span className="block text-md font-semibold text-gray-700 mb-2">Year of QP</span>
+    <Wrapper>
+      <Section>
+        <span>Exam</span>
         <Select
           classNamePrefix="custom-select"
-          className="w-full font-medium text-black border-2 border-gray-300 rounded-lg"
-          options={yearOptions}
-          value={yearOptions.find(option => option.value === year)}
-          onChange={(selectedOption) => handleSelectChange('year', selectedOption)}
+          className="custom-select-container"
+          options={examOptions}
+          value={examOptions.find(option => option.value === exam)}
+          onChange={(selectedOption) => handleSelectChange('exam', selectedOption)}
         />
-      </div>
-
-      <div className="text-left w-1/4 h-full pr-4 mr-4 border-r-2 border-gray-300">
-        <span className="block text-md font-semibold text-gray-700 mb-2">Semester</span>
+      </Section>
+      <Section>
+        <span>Regulation</span>
         <Select
           classNamePrefix="custom-select"
-          className="w-full font-medium text-black border-2 border-gray-300 rounded-lg"
-          options={semesterOptions}
-          value={semesterOptions.find(option => option.value === semester)}
-          onChange={(selectedOption) => handleSelectChange('semester', selectedOption)}
+          className="custom-select-container"
+          options={regulationOptions}
+          value={regulationOptions.find(option => option.value === regulation)}
+          onChange={(selectedOption) => handleSelectChange('regulation', selectedOption)}
         />
-      </div>
-
-      <div className="text-left w-2/5 h-full">
-        <span className="block text-md font-semibold text-gray-700 mb-2">Department</span>
+      </Section>
+      <Section>
+        <span>Is this a New Subject</span>
         <Select
           classNamePrefix="custom-select"
-          className="w-full font-medium text-black border-2 border-gray-300 rounded-lg"
-          options={departmentOptions}
-          value={departmentOptions.find(option => option.value === department)}
-          onChange={(selectedOption) => handleSelectChange('department', selectedOption)}
+          className="custom-select-container"
+          options={subjectMissingOptions}
+          value={subjectMissingOptions.find(option => option.value === subjectMissing)}
+          onChange={(selectedOption) => handleSelectChange('missing', selectedOption)}
         />
-      </div>
-    </div>
+      </Section>
+    </Wrapper>
   );
 };
 
-export default QPDetails;
+export default MoreDetails;
