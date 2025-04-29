@@ -1,89 +1,31 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import styled from 'styled-components';
-
-const Wrapper = styled.div`
-  display: flex;
-  align-items: left;
-  border: 1px solid #ccc;
-  border-radius: 35px;
-  padding: 5px 5px;
-  max-width: 550px;
-  height: 55px;
-  margin: 20px auto;
-  background-color: #fff;
-`;
-
-const Section = styled.div`
-  width: 100%;  // Occupies the full width now
-  text-align: left;
-  height: 100%;
-  
-  span {
-    margin-left: 10px;
-    display: block;
-    font-weight: bold;
-    font-size: 13px;
-    color: #555;
-  }
-
-  input {
-    width: calc(100% - 20px);  // Full width minus padding/margin
-    border: none;  // Remove the border
-    background-color: transparent;  // Match the background of the container
-    padding-left: 10px;  // Ensure padding on the left for alignment
-    font-size: 14px;
-    outline: none;  // Remove the outline on focus
-    color: #000;
-  }
-`;
-
-const Submit = styled.div`
-    text-align:center;
-    input{
-    background-color:black;
-    color:white;
-    width:250px;
-    height:40px;
-    border-radius:20px;
-
-      &:hover {
-    background-color: #067;  
-  }
-    }
-`
-const Req = styled.div`
-
-    text-align:center;
-    margin-top:12px;
-    margin-bottom:50px;
-
-    a{
-    color:blue;
-    }
-`
+import { Link } from 'react-router-dom';
+import Button from '../Button';
 
 const Alias = () => {
   return (
     <>
-        <Wrapper>
-        <Section>
-            <span>Enter an alias (For upload credit purposes)</span>
-            <input 
+      <div className="flex justify-center items-center border border-gray-300 rounded-3xl p-5 max-w-lg mx-auto bg-white shadow-md">
+        <div className="w-full text-left">
+          <span className="block text-sm font-semibold text-gray-600 mb-2">Enter an alias (For upload credit purposes)</span>
+          <input 
             type="text" 
-            placeholder='A cool nickname perhaps?' 
-            />
-        </Section>
+            placeholder="A cool nickname perhaps?" 
+            className="w-full py-2 px-3 border border-gray-300 rounded-lg text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+      </div>
 
-        </Wrapper>
-        <Submit>
-            <input type="button" value="Submit My Paper"  />
-        </Submit>
-        <Req>
-            <span>
-                Want to request for a Question paper? <Link to='/submitpapers'>Request Here </Link>
-            </span>
-        </Req>
+      <div className="text-center mt-10">
+        <Button name={'Submit My Paper'}/>
+      </div>
+
+      <div className="text-center mt-[-25px] mb-12">
+        <span className="text-sm text-gray-700">
+          Want to request for a Question paper? 
+          <Link to="/requestpapers" className="text-blue-600 hover:underline">Request Here</Link>
+        </span>
+      </div>
     </>
   );
 };

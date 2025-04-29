@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from '../Button';
 
 export default function Heading() {
     const Submit = styled.div`
@@ -16,10 +17,9 @@ export default function Heading() {
     }
 `
     return (
-        <Submit>
-            <input type="button" value="Request Paper" />
-        </Submit>
-
+      <div className='flex justify-center'>
+        <Button name={'Request Paper'}/>
+      </div>  
     
     );
 }

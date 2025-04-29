@@ -9,7 +9,7 @@ export default function Heading(){
     text-align:center;
 
     span{
-    color:#75232a
+    color:#114AA4
     }
     `
     const Paragraph = styled.p`

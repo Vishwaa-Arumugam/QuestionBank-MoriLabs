@@ -1,10 +1,13 @@
-import morilabsLogo from './assets/morilabs.png'
+import React from 'react'
 
-function Footer(){
-    return(
-        <div className="footer">
-            <img src={morilabsLogo} alt="Mori Labs Logo" style={{ height: '2rem' }} className='footer-logo'/>
-            <p className='text-md md:text-xl'> Created by Mori Labs </p>
+const Footer = () => {
+    const currentYear = new Date().getFullYear(); 
+
+    return (
+        <div className="relative bg-black h-7 w-full mt-auto">
+            <div className="absolute bottom-1 right-2 font-semibold text-sm text-white">
+                Mori Labs {currentYear} | &#169; All Rights Reserved
+            </div>
         </div>
     )
 }
